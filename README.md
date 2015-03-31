@@ -4,6 +4,9 @@ MoneyKiller-工资五险一金计算
 
 ## About MoneyKiller
 MoneyKiller is a tool for calculate insurance, housing fund and individual income tax.
+
+Android 4.0+ is required, and Android 4.2+ will give you a better experience.
+
 [![Android](http://mudlab9.com/static/image/btn_android.png)](https://play.google.com/store/apps/details?id=)
 
 ## Why MoneyKiller
