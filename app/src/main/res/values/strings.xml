@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">MoneyKiller</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="setting">Setting</string>
+    <string name="about">About</string>
 
 </resources>
