@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white"
+              android:orientation="horizontal" >
+
+    <TableLayout
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="7.8"
+            android:gravity="center"
+            android:padding="16.0dip" >
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginBottom="-10.0dip"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" >
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_7"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_7" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_8"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_8" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_9"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_9" />
+        </TableRow>
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginBottom="-10.0dip"
+                android:layout_marginTop="-10.0dip"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" >
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_4"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_4" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_5"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_5" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_6"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_6" />
+        </TableRow>
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginBottom="-10.0dip"
+                android:layout_marginTop="-10.0dip"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" >
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_1"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_1" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_2"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_2" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_3"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_3" />
+        </TableRow>
+
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginBottom="-10.0dip"
+                android:layout_marginTop="-10.0dip"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" >
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_15"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_15" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_0"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_0" />
+
+            <com.lean56.app.widget.CircleButton
+                    android:id="@+id/btn_number_16"
+                    android:layout_width="0.0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.0"
+                    android:src="@drawable/number_16" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="2.2"
+            android:orientation="horizontal" >
+
+        <View
+                android:layout_width="1.0dip"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16.0dip"
+                android:layout_marginTop="16.0dip"
+                android:alpha="0.05"
+                android:background="@android:color/black" />
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" >
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginBottom="-10.0dip"
+                    android:layout_weight="1.0"
+                    android:orientation="horizontal" >
+
+                <com.lean56.app.widget.CircleButton
+                        android:id="@+id/btn_number_11"
+                        android:layout_width="0.0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:src="@drawable/number_11" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginBottom="-10.0dip"
+                    android:layout_marginTop="-10.0dip"
+                    android:layout_weight="1.0" >
+
+                <com.lean56.app.widget.CircleButton
+                        android:id="@+id/btn_number_12"
+                        android:layout_width="0.0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:src="@drawable/number_12" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginBottom="-10.0dip"
+                    android:layout_marginTop="-10.0dip"
+                    android:layout_weight="1.0" >
+
+                <com.lean56.app.widget.CircleButton
+                        android:id="@+id/btn_number_13"
+                        android:layout_width="0.0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:src="@drawable/number_13" />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_marginBottom="-10.0dip"
+                    android:layout_marginTop="-10.0dip"
+                    android:layout_weight="1.0" >
+
+                <com.lean56.app.widget.CircleButton
+                        android:id="@+id/btn_number_14"
+                        android:layout_width="0.0dip"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:src="@drawable/number_14" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

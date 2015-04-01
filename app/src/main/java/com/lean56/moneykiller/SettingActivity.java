@@ -1,7 +1,9 @@
 package com.lean56.moneykiller;
 
+import android.preference.PreferenceActivity;
+
 /**
- * Created by Charles on 3/31/2015.
+ * PreferenceActivity for preference
  */
-public class SettingActivity extends BaseActivity {
+public class SettingActivity extends PreferenceActivity {
 }
