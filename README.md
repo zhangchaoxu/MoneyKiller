@@ -1,6 +1,6 @@
 # MoneyKiller
 MoneyKiller-工资五险一金计算
-[![Build Status](https://travis-ci.org/zhangchaoxu/MoneyKiller.png?branch=master)](https://travis-ci.org/zhangchaoxu/MoneyKiller
+[![Build Status](https://travis-ci.org/zhangchaoxu/MoneyKiller.png?branch=master)](https://travis-ci.org/zhangchaoxu/MoneyKiller)
 
 ## About MoneyKiller
 MoneyKiller is a tool for calculate insurance, housing fund and individual income tax.
