@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,6 +24,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
 import com.lean56.moneykiller.adapter.DrawerNavigationAdapter;
+import com.lean56.moneykiller.ui.fragment.MainListFragment;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -154,7 +158,13 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
-        Toast.makeText(mContext, "+" + position, Toast.LENGTH_LONG).show();
+        Fragment fragment = MainListFragment.newInstance(position);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_frame, fragment);
+        ft.commit();
+
         // update selected item title, then close the drawer
         setTitle(mNavigationTitles[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
