@@ -2,15 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.lean56.moneykiller">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
 
     <application android:allowBackup="true"
                  android:icon="@drawable/ic_launcher"
@@ -21,11 +21,11 @@
         <!-- amap cofg -->
         <meta-data
                 android:name="com.amap.api.v2.apikey"
-                android:value="9232005d6977214d672f82e8f51f0b07" />
+                android:value="9232005d6977214d672f82e8f51f0b07"/>
 
-        <meta-data android:value="YOUR_APP_KEY" android:name="UMENG_APPKEY" />
+        <meta-data android:name="UMENG_APPKEY" android:value="YOUR_APP_KEY"/>
 
-        <meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="${CHANNEL_NAME}"/>
 
         <activity android:name=".ChoeungEkActivity"
                   android:launchMode="singleTop"

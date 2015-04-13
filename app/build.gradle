@@ -8,6 +8,8 @@ buildscript {
 }
 apply plugin: 'com.android.application'
 
+project.archivesBaseName = "MoneyKiller"
+
 repositories {
     jcenter()
 }
@@ -22,6 +24,7 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [ CHANNEL_NAME:"OFFICIAL"] // default channel
     }
 
     compileOptions {
@@ -32,6 +35,20 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        official {
+            manifestPlaceholders = [ CHANNEL_NAME:"OFFICIAL"]
+        }
+        myapp {
+            manifestPlaceholders = [ CHANNEL_NAME:"MYAPP"]
+        }
+        umeng {
+            manifestPlaceholders = [ CHANNEL_NAME:"UMENG" ]
+        }
+        wandoujia {
+            manifestPlaceholders = [ CHANNEL_NAME:"WANDOUJIA" ]
         }
     }
 }
