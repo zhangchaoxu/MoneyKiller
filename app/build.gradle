@@ -24,32 +24,53 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
-        manifestPlaceholders = [ CHANNEL_NAME:"OFFICIAL"] // default channel
+        manifestPlaceholders = [CHANNEL_NAME: "official"] // default channel
+    }
+
+    // sign the application
+    // see {http://stackoverflow.com/questions/18328730/how-to-create-a-release-signed-apk-file-using-gradle}
+    signingConfigs {
+        release {
+            storeFile file("C:\\Java\\keystore\\lean56.jks")
+            storePassword ""
+            keyAlias "release.key"
+            keyPassword ""
+        }
+        debug {
+            // No debug config
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            // tools/proguard/proguard-android.txt is the system default proguard file
+            // proguard-rules.pro is application customized proguard file
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+
+        }
+    }
+
+    productFlavors {
+        official {}
+        xiaomi {}
+    }
+
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    productFlavors {
-        official {
-            manifestPlaceholders = [ CHANNEL_NAME:"OFFICIAL"]
-        }
-        myapp {
-            manifestPlaceholders = [ CHANNEL_NAME:"MYAPP"]
-        }
-        umeng {
-            manifestPlaceholders = [ CHANNEL_NAME:"UMENG" ]
-        }
-        wandoujia {
-            manifestPlaceholders = [ CHANNEL_NAME:"WANDOUJIA" ]
-        }
+
+    lintOptions {
+        // remove lint check error
+        abortOnError false
     }
 }
 
