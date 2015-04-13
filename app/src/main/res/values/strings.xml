@@ -5,4 +5,22 @@
     <string name="setting">Setting</string>
     <string name="about">About</string>
 
+    <string-array name="navigation_array">
+        <item>工资薪金</item>
+        <item>年终奖</item>
+        <item>经济补偿金</item>
+        <item>劳务报酬</item>
+        <item>稿酬</item>
+        <item>特许权使用费</item>
+        <item>财产租赁</item>
+        <item>财产转让</item>
+        <item>利息、股息、红利</item>
+        <item>个体工商户的生产、经营</item>
+        <item>对企事业单位的承包、承租经营</item>
+        <item>偶然所得</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
 </resources>

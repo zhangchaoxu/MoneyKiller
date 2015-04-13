@@ -227,6 +227,16 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="recyclerview-v7-22.0.0">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/classes.jar!/" />
+        <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/res" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://C:/ProgramPortable/android-sdk/extras/android/m2repository/com/android/support/recyclerview-v7/22.0.0/recyclerview-v7-22.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="support-annotations-22.0.0">
       <CLASSES>
         <root url="jar://C:/ProgramPortable/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar!/" />

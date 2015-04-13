@@ -7,7 +7,7 @@
               android:orientation="vertical"
               tools:context=".ChoeungEkActivity">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
 
     <android.support.v4.widget.DrawerLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -38,6 +38,16 @@
                     android:layout_weight="4.4"/>
 
         </LinearLayout>
+
+        <!-- navigation drawer -->
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/drawer"
+                android:scrollbars="vertical"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|start"
+                android:choiceMode="singleChoice"
+                android:divider="@null" />
     </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

@@ -15,6 +15,9 @@ Android 4.0+ is required, and Android 4.2+ will give you a better experience.
 ## About Me
 See [Blog](http://lean56.com)
 
+## Reference
+1.[中华人民共和国个人所得税法](http://www.gov.cn/flfg/2011-06/30/content_1897108.htm)
+
 ## License
 
     Copyright (C) 2015 Charles Zhang
