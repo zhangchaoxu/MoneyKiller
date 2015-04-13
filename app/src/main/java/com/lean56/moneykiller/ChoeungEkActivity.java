@@ -2,8 +2,10 @@ package com.lean56.moneykiller;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +22,10 @@ import com.umeng.analytics.MobclickAgent;
 public class ChoeungEkActivity extends BaseActivity implements AMapLocationListener {
 
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
+    private Context mContext;
 
+    // view resource
+    private Toolbar mToolbar;
     /**
      * location mgr proxy
      */
@@ -30,8 +35,40 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choeung_ek);
+        mContext = this;
 
         initLocation();
+        initToolbar();
+    }
+
+    private void initToolbar() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        // toolbar.setLogo(R.drawable.ic_launcher);
+        mToolbar.setTitle("Rocko");// 标题的文字需在setSupportActionBar之前，不然会无效
+        // toolbar.setSubtitle("副标题");
+        setSupportActionBar(mToolbar);
+        /* 这些通过ActionBar来设置也是一样的，注意要在setSupportActionBar(toolbar);之后，不然就报错了 */
+        // getSupportActionBar().setTitle("标题");
+        // getSupportActionBar().setSubtitle("副标题");
+        // getSupportActionBar().setLogo(R.drawable.ic_launcher);
+
+        /* 菜单的监听可以在toolbar里设置，也可以像ActionBar那样，通过Activity的onOptionsItemSelected回调方法来处理 */
+        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_settings:
+                        Toast.makeText(mContext, "action_settings", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.action_about:
+                        Toast.makeText(mContext, "action_share", Toast.LENGTH_LONG).show();
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
     /**
@@ -65,7 +102,7 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         if (id == R.id.action_settings) {
             Toast.makeText(this, "setting", Toast.LENGTH_LONG).show();
             return true;
-        } else if(id == R.id.action_about) {
+        } else if (id == R.id.action_about) {
             Toast.makeText(this, "about", Toast.LENGTH_LONG).show();
             return true;
         }
@@ -92,16 +129,20 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
     }
 
     @Override
-    public void onLocationChanged(Location arg0) {}
+    public void onLocationChanged(Location arg0) {
+    }
 
     @Override
-    public void onProviderDisabled(String arg0) {}
+    public void onProviderDisabled(String arg0) {
+    }
 
     @Override
-    public void onProviderEnabled(String arg0) {}
+    public void onProviderEnabled(String arg0) {
+    }
 
     @Override
-    public void onStatusChanged(String arg0, int arg1, Bundle arg2) {}
+    public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
+    }
 
     // [-] AMapLocationListener
 

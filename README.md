@@ -1,5 +1,5 @@
 # MoneyKiller
-MoneyKiller-工资五险一金计算
+MoneyKiller-个税计算器
 [![Build Status](https://travis-ci.org/zhangchaoxu/MoneyKiller.png?branch=master)](https://travis-ci.org/zhangchaoxu/MoneyKiller)
 
 ## About MoneyKiller
