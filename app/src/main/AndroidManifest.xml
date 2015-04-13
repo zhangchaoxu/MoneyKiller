@@ -23,6 +23,10 @@
                 android:name="com.amap.api.v2.apikey"
                 android:value="9232005d6977214d672f82e8f51f0b07" />
 
+        <meta-data android:value="YOUR_APP_KEY" android:name="UMENG_APPKEY" />
+
+        <meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
+
         <activity android:name=".ChoeungEkActivity"
                   android:launchMode="singleTop"
                   android:screenOrientation="portrait"

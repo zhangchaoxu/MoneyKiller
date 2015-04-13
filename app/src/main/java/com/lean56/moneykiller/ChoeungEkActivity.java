@@ -12,6 +12,7 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * ChoeungEk-TheKillingFields(http://en.wikipedia.org/wiki/Choeung_Ek)
@@ -111,5 +112,11 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         mLocationManagerProxy.removeUpdates(this);
         // destroy location proxy
         mLocationManagerProxy.destroy();
+        MobclickAgent.onPause(this);
+    }
+
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
     }
 }
