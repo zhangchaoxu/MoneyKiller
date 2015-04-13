@@ -41,6 +41,10 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         initToolbar();
     }
 
+    /**
+     * init toolbar
+     * replace actionbar with toolbar
+     */
     private void initToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         // toolbar.setLogo(R.drawable.ic_launcher);
@@ -89,25 +93,6 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_choeung_ek, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast.makeText(this, "setting", Toast.LENGTH_LONG).show();
-            return true;
-        } else if (id == R.id.action_about) {
-            Toast.makeText(this, "about", Toast.LENGTH_LONG).show();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     // [+] AMapLocationListener

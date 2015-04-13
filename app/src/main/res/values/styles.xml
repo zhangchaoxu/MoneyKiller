@@ -2,11 +2,10 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
-        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
-
         <item name="colorPrimary">@color/Indigo_colorPrimary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
         <item name="colorPrimaryDark">@color/Indigo_colorPrimaryDark</item>
     </style>
 
@@ -14,8 +13,5 @@
         <item name="color">@android:color/white</item>
     </style>
 
-    <style name="OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
-        <item name="android:src">@drawable/overflow</item>
-    </style>
 
 </resources>
