@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/Indigo_colorPrimary</item>
-        <!--<item name="textColorPrimary">@android:color/white</item>-->
         <item name="colorPrimaryDark">@color/Indigo_colorPrimaryDark</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
     </style>
 
     <style name="AppTheme.DrawerArrowToggle" parent="@style/Base.Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="AppRootView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:orientation">vertical</item>
     </style>
 
 

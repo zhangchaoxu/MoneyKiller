@@ -214,20 +214,16 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
     }
 
     @Override
-    public void onLocationChanged(Location arg0) {
-    }
+    public void onLocationChanged(Location arg0) {}
 
     @Override
-    public void onProviderDisabled(String arg0) {
-    }
+    public void onProviderDisabled(String arg0) {}
 
     @Override
-    public void onProviderEnabled(String arg0) {
-    }
+    public void onProviderEnabled(String arg0) {}
 
     @Override
-    public void onStatusChanged(String arg0, int arg1, Bundle arg2) {
-    }
+    public void onStatusChanged(String arg0, int arg1, Bundle arg2) {}
 
     // [-] AMapLocationListener
 
@@ -238,11 +234,11 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         mLocationManagerProxy.removeUpdates(this);
         // destroy location proxy
         mLocationManagerProxy.destroy();
-        MobclickAgent.onPause(this);
+        MobclickAgent.onPause(mContext);
     }
 
     public void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+        MobclickAgent.onResume(mContext);
     }
 }
