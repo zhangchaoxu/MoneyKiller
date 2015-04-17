@@ -218,25 +218,20 @@
       <SOURCES />
     </library>
     <library name="appcompat-v7-22.0.0">
-      <ANNOTATIONS>
-        <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/annotations.zip!/" />
-      </ANNOTATIONS>
       <CLASSES>
-        <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res" />
         <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar!/" />
+        <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>
     <library name="recyclerview-v7-22.0.0">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/classes.jar!/" />
         <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/res" />
+        <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/22.0.0/classes.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://C:/ProgramPortable/android-sdk/extras/android/m2repository/com/android/support/recyclerview-v7/22.0.0/recyclerview-v7-22.0.0-sources.jar!/" />
-      </SOURCES>
+      <SOURCES />
     </library>
     <library name="support-annotations-22.0.0">
       <CLASSES>
@@ -249,14 +244,12 @@
     </library>
     <library name="support-v4-22.0.0">
       <CLASSES>
+        <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar!/" />
         <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar!/" />
         <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/res" />
-        <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://C:/ProgramPortable/android-sdk/extras/android/m2repository/com/android/support/support-v4/22.0.0/support-v4-22.0.0-sources.jar!/" />
-      </SOURCES>
+      <SOURCES />
     </library>
     <library name="systembartint-1.0.3">
       <CLASSES>
