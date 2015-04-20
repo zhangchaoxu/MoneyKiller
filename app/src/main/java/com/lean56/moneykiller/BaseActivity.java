@@ -46,9 +46,13 @@ public class BaseActivity extends ActionBarActivity {
      * set the system bar tint, include statusBar and navigation
      *
      * @param statusBarTintEnabled
+     *  enable status bar tine
      * @param statusBarResId
+     *  res id of status bar tint
      * @param navigationNarTintEnabled
+     *  enable navigation bar tint
      * @param navigationBarResId
+     *  res id of navigation bar tint
      */
     protected void setSystemBarTint(boolean statusBarTintEnabled, int statusBarResId, boolean navigationNarTintEnabled, int navigationBarResId) {
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
