@@ -31,6 +31,18 @@ public class BaseActivity extends ActionBarActivity {
     // [+]translucent system bar
 
     /**
+     * Apply background tinting to the Android system UI when using KitKat translucent modes.
+     * see {https://github.com/jgilfelt/SystemBarTint}
+     */
+    private void matchSystemBarWithActionBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+
+            setSystemBarTint(true, R.color.color_primary_dark, false, 0);
+        }
+    }
+
+    /**
      * set the system bar tint, include statusBar and navigation
      *
      * @param statusBarTintEnabled
@@ -54,18 +66,6 @@ public class BaseActivity extends ActionBarActivity {
             if (0 != navigationBarResId) {
                 tintManager.setNavigationBarTintResource(navigationBarResId);
             }
-        }
-    }
-
-    /**
-     * Apply background tinting to the Android system UI when using KitKat translucent modes.
-     * see {https://github.com/jgilfelt/SystemBarTint}
-     */
-    private void matchSystemBarWithActionBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-
-            setSystemBarTint(true, 0, false, 0);
         }
     }
 
