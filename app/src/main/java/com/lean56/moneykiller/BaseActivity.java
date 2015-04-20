@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Base Activity of all activities of Application
@@ -45,14 +46,10 @@ public class BaseActivity extends ActionBarActivity {
     /**
      * set the system bar tint, include statusBar and navigation
      *
-     * @param statusBarTintEnabled
-     *  enable status bar tine
-     * @param statusBarResId
-     *  res id of status bar tint
-     * @param navigationNarTintEnabled
-     *  enable navigation bar tint
-     * @param navigationBarResId
-     *  res id of navigation bar tint
+     * @param statusBarTintEnabled     enable status bar tine
+     * @param statusBarResId           res id of status bar tint
+     * @param navigationNarTintEnabled enable navigation bar tint
+     * @param navigationBarResId       res id of navigation bar tint
      */
     protected void setSystemBarTint(boolean statusBarTintEnabled, int statusBarResId, boolean navigationNarTintEnabled, int navigationBarResId) {
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
@@ -86,4 +83,18 @@ public class BaseActivity extends ActionBarActivity {
         win.setAttributes(winParams);
     }
     // [-]translucent system bar
+
+    // [+] Umeng Analytics
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    // [-] Umeng Analytics
 }
