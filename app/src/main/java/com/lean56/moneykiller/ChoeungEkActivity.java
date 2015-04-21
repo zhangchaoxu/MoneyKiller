@@ -234,11 +234,6 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         mLocationManagerProxy.removeUpdates(this);
         // destroy location proxy
         mLocationManagerProxy.destroy();
-        MobclickAgent.onPause(mContext);
     }
 
-    public void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(mContext);
-    }
 }

@@ -9,7 +9,7 @@
     <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- enable translucent bar -->
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
     </style>
 
 </resources>

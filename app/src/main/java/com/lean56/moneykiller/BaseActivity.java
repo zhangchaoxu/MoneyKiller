@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Base Activity of all activities of Application
@@ -31,12 +32,24 @@ public class BaseActivity extends ActionBarActivity {
     // [+]translucent system bar
 
     /**
+     * Apply background tinting to the Android system UI when using KitKat translucent modes.
+     * see {https://github.com/jgilfelt/SystemBarTint}
+     */
+    private void matchSystemBarWithActionBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+
+            setSystemBarTint(true, R.color.color_primary_dark, false, 0);
+        }
+    }
+
+    /**
      * set the system bar tint, include statusBar and navigation
      *
-     * @param statusBarTintEnabled
-     * @param statusBarResId
-     * @param navigationNarTintEnabled
-     * @param navigationBarResId
+     * @param statusBarTintEnabled     enable status bar tine
+     * @param statusBarResId           res id of status bar tint
+     * @param navigationNarTintEnabled enable navigation bar tint
+     * @param navigationBarResId       res id of navigation bar tint
      */
     protected void setSystemBarTint(boolean statusBarTintEnabled, int statusBarResId, boolean navigationNarTintEnabled, int navigationBarResId) {
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
@@ -57,18 +70,6 @@ public class BaseActivity extends ActionBarActivity {
         }
     }
 
-    /**
-     * Apply background tinting to the Android system UI when using KitKat translucent modes.
-     * see {https://github.com/jgilfelt/SystemBarTint}
-     */
-    private void matchSystemBarWithActionBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-
-            setSystemBarTint(true, 0, false, 0);
-        }
-    }
-
     @TargetApi(19)
     private void setTranslucentStatus(boolean on) {
         Window win = getWindow();
@@ -82,4 +83,18 @@ public class BaseActivity extends ActionBarActivity {
         win.setAttributes(winParams);
     }
     // [-]translucent system bar
+
+    // [+] Umeng Analytics
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+    // [-] Umeng Analytics
 }

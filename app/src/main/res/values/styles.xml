@@ -2,12 +2,13 @@
 <resources>
 
     <style name="AppBaseTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">@color/Indigo_colorPrimary</item>
-        <item name="colorPrimaryDark">@color/Indigo_colorPrimaryDark</item>
+
     </style>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
+    <style name="AppTheme" parent="@style/AppBaseTheme">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
     </style>
 
@@ -21,6 +22,5 @@
         <item name="android:fitsSystemWindows">true</item>
         <item name="android:orientation">vertical</item>
     </style>
-
 
 </resources>
