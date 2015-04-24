@@ -4,9 +4,11 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.1.1'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
     }
 }
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 project.archivesBaseName = "MoneyKiller"
 
@@ -30,25 +32,25 @@ android {
     // sign the application
     // see {http://stackoverflow.com/questions/18328730/how-to-create-a-release-signed-apk-file-using-gradle}
     signingConfigs {
-        /*release {
-            storeFile file("C:\\Java\\keystore\\lean56.jks")
+        release {
+            storeFile file(".\\lean56.jks")
             storePassword ""
             keyAlias "release.key"
             keyPassword ""
-        }*/
+        }
         debug {
             // No debug config
         }
     }
 
     buildTypes {
-        /*release {
+        release {
             signingConfig signingConfigs.release
             minifyEnabled false
             // tools/proguard/proguard-android.txt is the system default proguard file
             // proguard-rules.pro is application customized proguard file
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }*/
+        }
         debug {
 
         }
@@ -82,4 +84,24 @@ dependencies {
 
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     compile 'com.umeng.analytics:analytics:latest.integration'
+
+    apt "org.androidannotations:androidannotations:3.2"
+    compile "org.androidannotations:androidannotations-api:3.2"
 }
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        // if you have multiple outputs (when using splits), you may want to have other index than 0
+
+        resourcePackageName 'com.lean56.moneykiller'
+
+        // If you're using Android NBS flavors you should use the following line instead of hard-coded packageName
+        // resourcePackageName android.defaultConfig.applicationId
+
+        // You can set optional annotation processing options here, like these commented options:
+        // logLevel 'INFO'
+        // logFile '/var/log/aa.log'
+    }
+}
+
