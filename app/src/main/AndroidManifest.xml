@@ -15,7 +15,7 @@
     <application android:allowBackup="true"
                  android:icon="@drawable/ic_launcher"
                  android:label="@string/app_name"
-                 android:name=".MyApplication"
+                 android:name=".MyApplication_"
                  android:theme="@style/AppTheme">
 
         <!-- amap cofg -->
@@ -27,7 +27,7 @@
 
         <meta-data android:name="UMENG_CHANNEL" android:value="${CHANNEL_NAME}"/>
 
-        <activity android:name=".ChoeungEkActivity"
+        <activity android:name=".ChoeungEkActivity_"
                   android:launchMode="singleTop"
                   android:screenOrientation="portrait"
                   android:label="@string/app_name">
@@ -38,11 +38,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SettingActivity"
+        <activity android:name=".SettingActivity_"
                   android:label="@string/setting"
                   android:screenOrientation="portrait"/>
 
-        <activity android:name=".AboutActivity"
+        <activity android:name=".AboutActivity_"
                   android:label="@string/about"
                   android:screenOrientation="portrait"/>
     </application>

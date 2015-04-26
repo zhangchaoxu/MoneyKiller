@@ -10,6 +10,7 @@ import java.util.HashMap;
 /**
  * App Application
  */
+@EApplication
 public class MyApplication extends Application {
 
     public MyApplication() {

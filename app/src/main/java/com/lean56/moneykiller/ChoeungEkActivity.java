@@ -29,14 +29,20 @@ import com.umeng.analytics.MobclickAgent;
 
 /**
  * ChoeungEk-TheKillingFields(http://en.wikipedia.org/wiki/Choeung_Ek)
+ *
+ * @author Charles
  */
+@EActivity(R.layout.activity_choeung_ek)
 public class ChoeungEkActivity extends BaseActivity implements AMapLocationListener {
 
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
     private Context mContext;
 
     // view resource
+    @ViewById(R.id.toolbar)
     private Toolbar mToolbar;
+
+
     private RecyclerView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;

@@ -1,7 +1,10 @@
 package com.lean56.moneykiller;
 
 /**
- * Created by Charles on 3/31/2015.
+ * About Activity
+ *
+ * @author Charles
  */
+@EActivity(R.layout.about)
 public class AboutActivity extends BaseActivity {
 }
