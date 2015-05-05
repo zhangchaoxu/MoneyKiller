@@ -1,11 +1,7 @@
 package com.lean56.moneykiller;
 
 import android.app.Application;
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Logger;
-import com.google.android.gms.analytics.Tracker;
-
-import java.util.HashMap;
+import org.androidannotations.annotations.EApplication;
 
 /**
  * App Application
@@ -19,7 +15,7 @@ public class MyApplication extends Application {
 
     // [+] Google Analytics
     // The following line should be changed to include the correct property id.
-    private static final String PROPERTY_ID = "UA-XXXXX-Y";
+   /* private static final String PROPERTY_ID = "UA-XXXXX-Y";
 
     public enum TrackerName {
         APP_TRACKER, // Tracker used only in this app.
@@ -27,7 +23,6 @@ public class MyApplication extends Application {
         ECOMMERCE_TRACKER, // Tracker used by all ecommerce transactions from a company.
     }
 
-    HashMap<TrackerName, Tracker> mTrackers = new HashMap<TrackerName, Tracker>();
 
     synchronized Tracker getTracker(TrackerName trackerId) {
         if (!mTrackers.containsKey(trackerId)) {
@@ -42,6 +37,6 @@ public class MyApplication extends Application {
             mTrackers.put(trackerId, t);
         }
         return mTrackers.get(trackerId);
-    }
+    }*/
     // [-] Google Analytics
 }

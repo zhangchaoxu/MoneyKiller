@@ -25,14 +25,15 @@ import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
 import com.lean56.moneykiller.adapter.DrawerNavigationAdapter;
 import com.lean56.moneykiller.ui.fragment.MainListFragment;
-import com.umeng.analytics.MobclickAgent;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
 
 /**
  * ChoeungEk-TheKillingFields(http://en.wikipedia.org/wiki/Choeung_Ek)
  *
  * @author Charles
  */
-@EActivity(R.layout.activity_choeung_ek)
+@EActivity(R.layout.choeung_ek)
 public class ChoeungEkActivity extends BaseActivity implements AMapLocationListener {
 
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
@@ -59,7 +60,7 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choeung_ek);
+        setContentView(R.layout.choeung_ek);
         mContext = this;
 
         mTitle = mDrawerTitle = getTitle();
