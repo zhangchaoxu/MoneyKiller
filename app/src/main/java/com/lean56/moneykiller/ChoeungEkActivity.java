@@ -41,7 +41,7 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
 
     // view resource
     @ViewById(R.id.toolbar)
-    private Toolbar mToolbar;
+    Toolbar mToolbar;
 
 
     private RecyclerView mDrawerList;

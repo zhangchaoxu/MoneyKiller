@@ -3,7 +3,7 @@ package com.lean56.moneykiller;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,7 +15,7 @@ import com.umeng.analytics.MobclickAgent;
  *
  * @author Charles
  */
-public class BaseActivity extends ActionBarActivity {
+public class BaseActivity extends AppCompatActivity {
 
     private final static String TAG = BaseActivity.class.getSimpleName();
 
