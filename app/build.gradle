@@ -19,13 +19,16 @@ android {
     // see {http://stackoverflow.com/questions/18328730/how-to-create-a-release-signed-apk-file-using-gradle}
     signingConfigs {
         release {
-            storeFile file(".\\lean56.jks")
+            storeFile file("..\\lean56.jks")
             storePassword "especially4u"
             keyAlias "open.key"
             keyPassword "especially4u"
         }
         debug {
-            // No debug config
+            storeFile file("..\\lean56.jks")
+            storePassword "especially4u"
+            keyAlias "open.key"
+            keyPassword "especially4u"
         }
     }
 
@@ -64,6 +67,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/Android_Location_V1.3.2.jar')
+
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile "com.android.support:recyclerview-v7:22.1.1"
 

@@ -2,6 +2,7 @@ package com.lean56.moneykiller;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,10 +12,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationListener;
+import com.amap.api.location.LocationManagerProxy;
+import com.amap.api.location.LocationProviderProxy;
 import com.lean56.moneykiller.adapter.DrawerNavigationAdapter;
 import com.lean56.moneykiller.ui.fragment.MainListFragment;
 
@@ -28,7 +34,9 @@ public class ChoeungEkActivity extends BaseActivity {
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
     private Context mContext;
 
-    // view resource
+    /**
+     * view res
+     */
     private Toolbar mToolbar;
     private RecyclerView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -37,6 +45,12 @@ public class ChoeungEkActivity extends BaseActivity {
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mNavigationTitles;
+
+    /**
+     * location
+     */
+    private LocationManagerProxy mLocationManagerProxy;
+    private AMapLocationListener mLocationListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +106,7 @@ public class ChoeungEkActivity extends BaseActivity {
             selectItem(0);
         }
 
-        //initLocation();
+        activateLocation();
     }
 
     @Override
@@ -170,14 +184,64 @@ public class ChoeungEkActivity extends BaseActivity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    // [+] LocationListener
+    // [+] Location Listener
 
+    /**
+     * activate Location
+     * see {http://lbs.amap.com/api/android-location-sdk/guide/location/}
+     */
+    private void activateLocation() {
+        mLocationManagerProxy = LocationManagerProxy.getInstance(this);
+        mLocationListener = new AMapLocationListener() {
+            @Override
+            public void onLocationChanged(AMapLocation amapLocation) {
+                if (amapLocation != null && amapLocation.getAMapException().getErrorCode() == 0) {
+                    handleLocation(amapLocation);
+                    deactivateLocation();
+                } else {
+                    Log.e(TAG, "Amap Location ERR:" + amapLocation.getAMapException().getErrorCode());
+                }
+            }
 
-    // [-] LocationListener
+            @Override
+            public void onLocationChanged(Location location) {}
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {}
+
+            @Override
+            public void onProviderEnabled(String provider) {}
+
+            @Override
+            public void onProviderDisabled(String provider) {}
+        };
+        mLocationManagerProxy.requestLocationData(LocationProviderProxy.AMapNetwork, -1, 15, mLocationListener);
+        mLocationManagerProxy.setGpsEnable(false);
+    }
+
+    private void handleLocation(AMapLocation location) {
+        Toast.makeText(this, "当前城市：" + location.getCity() + "-" + location.getCityCode(), Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "当前位置：" + location.getLatitude() + "-" + location.getLongitude());
+    }
+
+    /**
+     * stop location
+     */
+    private void deactivateLocation() {
+        if (null != mLocationManagerProxy) {
+            mLocationListener = null;
+
+            mLocationManagerProxy.removeUpdates(mLocationListener);
+            mLocationManagerProxy.destroy();
+            mLocationManagerProxy = null;
+        }
+    }
+    // [-] Location Listener
 
     @Override
     protected void onPause() {
         super.onPause();
+        deactivateLocation();
     }
 
 }
