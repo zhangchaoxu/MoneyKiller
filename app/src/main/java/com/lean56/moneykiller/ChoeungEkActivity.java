@@ -17,24 +17,19 @@ import android.view.View;
 import android.widget.Toast;
 import com.lean56.moneykiller.adapter.DrawerNavigationAdapter;
 import com.lean56.moneykiller.ui.fragment.MainListFragment;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
 
 /**
  * ChoeungEk-TheKillingFields(http://en.wikipedia.org/wiki/Choeung_Ek)
  *
  * @author Charles
  */
-@EActivity(R.layout.choeung_ek)
 public class ChoeungEkActivity extends BaseActivity {
 
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
     private Context mContext;
 
     // view resource
-    @ViewById(R.id.toolbar)
-    Toolbar mToolbar;
-
+    private Toolbar mToolbar;
     private RecyclerView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;

@@ -211,22 +211,6 @@
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.umeng.analytics/analytics/5.5.2/fdcea7db3cff238ea101d8790d581fe96b8c872/analytics-5.5.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Android_Location_V1.3.2">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/app/libs/Android_Location_V1.3.2.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="androidannotations-api-3.3.1">
-      <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.1/3b8b2740d5f8680a9eac6f6f726925988059fccd/androidannotations-api-3.3.1.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.1/a3c90c4368bd16d7969d0026db639f63900183c9/androidannotations-api-3.3.1-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="appcompat-v7-22.1.1">
       <ANNOTATIONS>
         <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/annotations.zip!/" />

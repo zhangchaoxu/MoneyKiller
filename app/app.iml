@@ -32,7 +32,6 @@
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/aidl/official/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/buildConfig/official/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/source/rs/official/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/apt/official/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/rs/official/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/build/generated/res/generated/official/debug" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/officialDebug/res" type="java-resource" />
@@ -111,11 +110,9 @@
     <orderEntry type="library" exported="" name="analytics-5.5.2" level="project" />
     <orderEntry type="library" exported="" name="MaterialNavigationDrawer-1.3.3" level="project" />
     <orderEntry type="library" exported="" name="systembartint-1.0.3" level="project" />
-    <orderEntry type="library" exported="" name="androidannotations-api-3.3.1" level="project" />
     <orderEntry type="library" exported="" name="material-ripple-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-22.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
-    <orderEntry type="library" exported="" name="Android_Location_V1.3.2" level="project" />
   </component>
 </module>

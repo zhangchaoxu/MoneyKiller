@@ -1,12 +1,10 @@
 package com.lean56.moneykiller;
 
 import android.app.Application;
-import org.androidannotations.annotations.EApplication;
 
 /**
  * App Application
  */
-@EApplication
 public class MyApplication extends Application {
 
     public MyApplication() {
