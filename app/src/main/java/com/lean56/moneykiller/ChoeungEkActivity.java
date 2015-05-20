@@ -1,10 +1,7 @@
 package com.lean56.moneykiller;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,15 +11,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationListener;
-import com.amap.api.location.LocationManagerProxy;
-import com.amap.api.location.LocationProviderProxy;
 import com.lean56.moneykiller.adapter.DrawerNavigationAdapter;
 import com.lean56.moneykiller.ui.fragment.MainListFragment;
 import org.androidannotations.annotations.EActivity;
@@ -34,7 +26,7 @@ import org.androidannotations.annotations.ViewById;
  * @author Charles
  */
 @EActivity(R.layout.choeung_ek)
-public class ChoeungEkActivity extends BaseActivity implements AMapLocationListener {
+public class ChoeungEkActivity extends BaseActivity {
 
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
     private Context mContext;
@@ -43,7 +35,6 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
     @ViewById(R.id.toolbar)
     Toolbar mToolbar;
 
-
     private RecyclerView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
@@ -51,11 +42,6 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mNavigationTitles;
-
-    /**
-     * location mgr proxy
-     */
-    private LocationManagerProxy mLocationManagerProxy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,20 +97,7 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
             selectItem(0);
         }
 
-        initLocation();
-    }
-
-    /**
-     * 初始化定位
-     */
-    private void initLocation() {
-        mLocationManagerProxy = LocationManagerProxy.getInstance(this);
-        //此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
-        //注意设置合适的定位时间的间隔，并且在合适时间调用removeUpdates()方法来取消定位请求
-        //在定位结束后，在合适的生命周期调用destroy()方法
-        //其中如果间隔时间为-1，则定位只定一次
-        mLocationManagerProxy.requestLocationData(LocationProviderProxy.AMapNetwork, -1, 15, this);
-        mLocationManagerProxy.setGpsEnable(false);
+        //initLocation();
     }
 
     @Override
@@ -202,45 +175,14 @@ public class ChoeungEkActivity extends BaseActivity implements AMapLocationListe
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    // [+] AMapLocationListener
-    @Override
-    public void onLocationChanged(AMapLocation amapLocation) {
-        if (amapLocation != null && amapLocation.getAMapException().getErrorCode() == 0) {
-            // 定位成功回调信息，设置相关消息
-            Log.e(TAG, amapLocation.getAddress());
-            Dialog alertDialog = new AlertDialog.Builder(this).
-                    setTitle("当前地址").
-                    setMessage(amapLocation.getAddress()).
-                    setIcon(R.drawable.ic_launcher).
-                    create();
+    // [+] LocationListener
 
-            alertDialog.show();
-        } else {
-            Log.e("AmapErr", "Location ERR:" + amapLocation.getAMapException().getErrorCode());
-        }
-    }
 
-    @Override
-    public void onLocationChanged(Location arg0) {}
-
-    @Override
-    public void onProviderDisabled(String arg0) {}
-
-    @Override
-    public void onProviderEnabled(String arg0) {}
-
-    @Override
-    public void onStatusChanged(String arg0, int arg1, Bundle arg2) {}
-
-    // [-] AMapLocationListener
+    // [-] LocationListener
 
     @Override
     protected void onPause() {
         super.onPause();
-        // remove location request
-        mLocationManagerProxy.removeUpdates(this);
-        // destroy location proxy
-        mLocationManagerProxy.destroy();
     }
 
 }
