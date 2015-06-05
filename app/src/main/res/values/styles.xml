@@ -23,4 +23,11 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+    <!-- Kitkat Translucent Status bar -->
+    <style name="KitkatStatusBar" parent="MaterialNavigationDrawerTheme.Light.DarkActionBar.TranslucentKitKatStatusBar">
+        <item name="colorPrimary">#8bc34a</item>
+        <item name="colorPrimaryDark">#558b2f</item>
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
 </resources>

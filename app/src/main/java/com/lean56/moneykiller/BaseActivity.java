@@ -1,13 +1,8 @@
 package com.lean56.moneykiller;
 
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -24,65 +19,34 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // set the sys bar include status bar and navigation bar
-        matchSystemBarWithActionBar();
+        //matchSystemBarWithActionBar();
 
         Log.d(getClass().getSimpleName(), TAG + "Base.onCreate...");
     }
 
-    // [+]translucent system bar
+    /*@Override
+    public void init(Bundle savedInstanceState) {
+        // add accounts
+        MaterialAccount account = new MaterialAccount(this.getResources(),"NeoKree","neokree@gmail.com", R.drawable.ic_launcher, R.drawable.ic_launcher);
+        this.addAccount(account);
 
-    /**
-     * Apply background tinting to the Android system UI when using KitKat translucent modes.
-     * see {https://github.com/jgilfelt/SystemBarTint}
-     */
-    private void matchSystemBarWithActionBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
+       *//* MaterialAccount account2 = new MaterialAccount(this.getResources(),"Hatsune Miky","hatsune.miku@example.com",R.drawable.photo2,R.drawable.mat2);
+        this.addAccount(account2);
 
-            setSystemBarTint(true, R.color.color_primary_dark, false, 0);
-        }
-    }
+        MaterialAccount account3 = new MaterialAccount(this.getResources(),"Example","example@example.com",R.drawable.photo,R.drawable.mat3);
+        this.addAccount(account3);*//*
 
-    /**
-     * set the system bar tint, include statusBar and navigation
-     *
-     * @param statusBarTintEnabled     enable status bar tine
-     * @param statusBarResId           res id of status bar tint
-     * @param navigationNarTintEnabled enable navigation bar tint
-     * @param navigationBarResId       res id of navigation bar tint
-     */
-    protected void setSystemBarTint(boolean statusBarTintEnabled, int statusBarResId, boolean navigationNarTintEnabled, int navigationBarResId) {
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);
-        if (statusBarTintEnabled) {
-            // set the status bar tint
-            tintManager.setStatusBarTintEnabled(true);
-            if (0 != statusBarResId) {
-                tintManager.setStatusBarTintResource(statusBarResId);
-            }
-        }
+        // create sections
+        this.addSection(newSection("Section 1", new MainListFragment()));
+        this.addSection(newSection("Section 2",new MainListFragment()));
+        //this.addSection(newSection("Section 3", R.drawable.ic_mic_white_24dp,new FragmentButton()).setSectionColor(Color.parseColor("#9c27b0")));
+        //this.addSection(newSection("Section", R.drawable.ic_hotel_grey600_24dp,new FragmentButton()).setSectionColor(Color.parseColor("#03a9f4")));
 
-        if (navigationNarTintEnabled) {
-            // set the navigation bar tint
-            tintManager.setNavigationBarTintEnabled(true);
-            if (0 != navigationBarResId) {
-                tintManager.setNavigationBarTintResource(navigationBarResId);
-            }
-        }
-    }
+        // create bottom section
+        this.addBottomSection(newSection("Bottom Section",R.drawable.ic_launcher, new Intent(this, SettingActivity.class)));
+    }*/
 
-    @TargetApi(19)
-    private void setTranslucentStatus(boolean on) {
-        Window win = getWindow();
-        WindowManager.LayoutParams winParams = win.getAttributes();
-        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-        if (on) {
-            winParams.flags |= bits;
-        } else {
-            winParams.flags &= ~bits;
-        }
-        win.setAttributes(winParams);
-    }
-    // [-]translucent system bar
+
 
     // [+] Umeng Analytics
     @Override
