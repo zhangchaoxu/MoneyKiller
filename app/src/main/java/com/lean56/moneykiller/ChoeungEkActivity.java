@@ -1,7 +1,7 @@
 package com.lean56.moneykiller;
 
 import android.content.Context;
-import android.content.res.Configuration;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,27 +9,24 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
-import com.lean56.moneykiller.adapter.DrawerNavigationAdapter;
+import com.lean56.moneykiller.ui.fragment.CalculatorFragment;
 import com.lean56.moneykiller.ui.fragment.MainListFragment;
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 
 /**
  * ChoeungEk-TheKillingFields(http://en.wikipedia.org/wiki/Choeung_Ek)
  *
  * @author Charles
  */
-public class ChoeungEkActivity extends BaseActivity {
+public class ChoeungEkActivity extends MaterialNavigationDrawer {
 
     private final static String TAG = ChoeungEkActivity.class.getSimpleName();
     private Context mContext;
@@ -53,6 +50,15 @@ public class ChoeungEkActivity extends BaseActivity {
     private AMapLocationListener mLocationListener;
 
     @Override
+    public void init(Bundle savedInstanceState) {
+        this.addSection(newSection("Section 1", new CalculatorFragment()));
+        this.addSection(newSection("Section 2",new MainListFragment()));
+
+        // create bottom section
+        this.addBottomSection(newSection("Bottom Section", R.drawable.ic_setting, new Intent(this, SettingActivity.class)));
+    }
+
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choeung_ek);
@@ -107,16 +113,16 @@ public class ChoeungEkActivity extends BaseActivity {
         }
 
         activateLocation();
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_choeung_ek, menu);
         return true;
     }
 
-    /* Called whenever we call invalidateOptionsMenu() */
+    *//* Called whenever we call invalidateOptionsMenu() *//*
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // If the nav drawer is open, hide action items related to the content view
@@ -143,7 +149,7 @@ public class ChoeungEkActivity extends BaseActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     private void selectItem(int position) {
         // update the main content by replacing fragments
@@ -170,7 +176,7 @@ public class ChoeungEkActivity extends BaseActivity {
      * onPostCreate() and onConfigurationChanged()...
      */
 
-    @Override
+    /*@Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         // Sync the toggle state after onRestoreInstanceState has occurred.
@@ -182,7 +188,7 @@ public class ChoeungEkActivity extends BaseActivity {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggls
         mDrawerToggle.onConfigurationChanged(newConfig);
-    }
+    }*/
 
     // [+] Location Listener
 
