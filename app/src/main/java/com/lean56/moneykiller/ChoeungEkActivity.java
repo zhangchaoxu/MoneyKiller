@@ -18,6 +18,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.location.LocationProviderProxy;
 import com.lean56.moneykiller.ui.fragment.CalculatorFragment;
+import com.lean56.moneykiller.R;
 import com.lean56.moneykiller.ui.fragment.MainListFragment;
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 
@@ -55,7 +56,7 @@ public class ChoeungEkActivity extends MaterialNavigationDrawer {
         this.addSection(newSection("Section 2",new MainListFragment()));
 
         // create bottom section
-        this.addBottomSection(newSection("Bottom Section", R.drawable.ic_setting, new Intent(this, SettingActivity.class)));
+        this.addBottomSection(newSection(getString(R.string.setting), R.drawable.ic_setting, new Intent(this, SettingActivity.class)));
     }
 
     /*@Override
