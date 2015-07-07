@@ -1,13 +1,11 @@
-# MoneyKiller
-MoneyKiller-个税计算器
+# MoneyKiller-个税计算器
 [![Build Status](https://travis-ci.org/zhangchaoxu/MoneyKiller.png?branch=master)](https://travis-ci.org/zhangchaoxu/MoneyKiller)
 
-## About MoneyKiller
 MoneyKiller is a tool for calculate insurance, housing fund and individual income tax.
 
 Android 4.0+ is required, and Android 4.2+ will give you a better experience.
 
-[![Android](http://mudlab9.com/static/image/btn_android.png)](https://play.google.com/store/apps/details?id=)
+[![Android](http://lean56.com/MoneyKiller/image/google_play.png)](https://play.google.com/store/apps/details?id=)
 
 ## Why MoneyKiller
 你懂得.
